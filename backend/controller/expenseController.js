@@ -27,7 +27,8 @@ const getAllExpense = async (req, res) => {
 
 const deleteExpense = async (req, res) => {
   try {
-    const { id } = req.params.id;
+    const { id } = req.params;
+    console.log(id);
     const expense = await Expense.destroy({
       where: {
         id: id,
